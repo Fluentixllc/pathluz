@@ -40,6 +40,17 @@ footer{background:var(--navy);color:#fff}
 .footer-inner a{color:#fff}
 .small{font-size:.92rem;color:#444}
 .banner{margin:28px 0}
-.banner img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);display:block}
+.banner img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);display:block;animation:banner-in 1s ease both, banner-glow 6s ease-in-out 1s infinite}
 .banner figcaption{font-size:.9rem;color:#555;margin-top:8px}
-.card.joy{border-radius:18px;box-shadow:0 4px 18px rgba(15,42,68,.08)}
+.card.joy{border-radius:18px;box-shadow:0 4px 18px rgba(15,42,68,.08);animation:rise-in .8s ease both}
+.card.joy:nth-of-type(2){animation-delay:.1s}
+.card.joy:nth-of-type(3){animation-delay:.2s}
+.hero h1{animation:rise-in .7s ease both}
+.btn{animation:btn-glow 4s ease-in-out infinite}
+.step-num{animation:step-pulse 3s ease-in-out infinite}
+@keyframes banner-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes banner-glow{0%,100%{box-shadow:0 0 0 rgba(201,168,106,0)}50%{box-shadow:0 0 28px rgba(201,168,106,.45)}}
+@keyframes rise-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes btn-glow{0%,100%{box-shadow:0 0 0 rgba(201,168,106,0)}50%{box-shadow:0 0 18px rgba(201,168,106,.6)}}
+@keyframes step-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@media (prefers-reduced-motion: reduce){.banner img,.card.joy,.hero h1,.btn,.step-num{animation:none}}
